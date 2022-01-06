@@ -1,0 +1,19 @@
+{
+    "name": "vendor/vchat",
+    "description": "Real Time Communication",
+    "autoload": {
+        "psr-4": {
+            "MyApp\\": "core/classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "kanweitech",
+            "email": "kanweiedward@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "cboden/ratchet": "^0.4"
+    }
+}
