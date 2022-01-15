@@ -6,6 +6,6 @@
 
 	$userObj = new User;
 
-	define('BASE_URL', 'http://localhost/vchat/index.php')
+	define('BASE_URL', 'http://localhost/vchat/')
 
 ?>
