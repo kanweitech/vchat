@@ -11,7 +11,7 @@
     }else{
         $userObj->redirect('home.php');
     }
-    var_dump($profileData);
+    
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +52,7 @@
             <div class="flex justify-between items-center border-b">
                 <div class="mx-2 flex items-center justify-center">
                     <div class="flex-shrink-0 mx-2 my-4 rounded-full overflow-hidden h-12 w-12  cursor-pointer">
-                        <img  class="w-full h-auto rounded-full select-none" src="PROFILE-IMAGE">
+                        <img  class="w-full h-auto rounded-full select-none" src="<?php echo BASE_URL.$user->profileImage;?>">
                     </div>
                     <div>
                         <span class="font-medium select-none"><?php echo $user->name;?></span>
@@ -77,6 +77,7 @@
                 <h2 class="font-bold text-lg my-4  px-6 select-none">Users</h2>
                 <ul class="select-none">
                     <!-- USER-LIST -->
+                    <?php $userObj->getUsers();?>
                 </ul>
             </div>
         </div>
@@ -85,6 +86,20 @@
     <!--RIGHT_SIDE-->
     <div class="flex-2 flex rounded-xl w-full h-full ">
        <!-- PROFILE -->
+       <!--PROFILE_SECTION-->
+        <div id="profile" class="flex flex-1 justify-center items-center">
+            <div class="flex flex-col flex-1 h-full overflow-hidden overflow-y-auto items-center justify-center">
+                <div class="w-60 h-60 right-img rounded-full overflow-hidden">
+                    <img class="h-auto w-full" src="<?php echo BASE_URL.$profileData->profileImage;?>">
+                </div>
+                <div class="right-heading">
+                    <h2 class="text-center"><?php echo $profileData->name;?></h2>
+                    <p>Do you want to make a Call?</p>
+                    <button id="callBtn" data-user="USERID" class="active:-top-2 relative transition border border-gray-400 shadow-md my-4 bg-green-400 hover:bg-green-500 p-4 px-5 rounded-full text-white text-xl"><i class="fas fa-video"></i></button>
+                </div>
+            </div>
+        </div>
+<!--PROFILE_SECTION_END-->  
        <!-- VIDEO -->
     </div>
     <!--RIGHT_SIDE_END-->
