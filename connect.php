@@ -5,7 +5,7 @@
     if(isset($_GET['username']) && !empty($_GET['username'])){
         $profileData = $userObj->getUserByUsername($_GET['username']);
         $user = $userObj->userData();
-        
+
 
         if(!$profileData){
             $userObj->redirect('home.php');
@@ -40,6 +40,9 @@
           src="https://code.jquery.com/jquery-3.6.0.min.js"
           integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
           crossorigin="anonymous"></script>
+    <script>
+        const conn = new WebSocket('ws://localhost:8080');
+    </script>
     <!-- Jquery timer -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timer.jquery/0.7.0/timer.jquery.js"></script>
           
